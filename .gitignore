@@ -1,0 +1,16 @@
+*.sqlite
+*.log
+*~
+.*~
+*.swp
+.*swp
+*.csv
+*.json
+.env
+*.exe
+*.pyc
+*.pyo
+venv/
+venv*
+.idea/
+__pycache__/
