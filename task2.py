@@ -19,7 +19,8 @@ def generate_product_entries(product):
     for variant in product["details"]["supply"]:
         for stock in variant["stock_data"]:
             if stock["stock_id"] == 1:
-                entry = (str(datetime.now())[:19], product["id"], variant["variant_id"], 1, stock["quantity"])
+                entry = (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), product["id"], variant["variant_id"], 1,
+                         stock["quantity"])
                 entries.append(entry)
 
     return entries
@@ -37,7 +38,7 @@ def generate_bundle_entries(product):
                   if stock["stock_id"] == 1]
 
         product_supply = min(supply)
-        entry = (str(datetime.now())[:19], product["id"], None, 1, product_supply)
+        entry = (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), product["id"], None, 1, product_supply)
         entries.append(entry)
 
     return entries
